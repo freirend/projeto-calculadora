@@ -2,7 +2,7 @@ var resultado = document.getElementById('resultado')
 
 function capturarCliques(id){
   document.getElementById(id).addEventListener('click', ()=>{
-    if (id > 0 && id <= 9){
+    if (id >= 0 && id <= 9){
       resultado.value += id
 
     }else if (id == 'c'){
@@ -18,9 +18,6 @@ function capturarCliques(id){
   })
 }
 
-/* Encerrei verificando se o valor de id é c para fazer o clear
-minuto 6:24 da aula*/
-
 
 var v = document.querySelectorAll('.valor')
 
@@ -35,3 +32,18 @@ for (i = 0; i < a.length; i++){
   var ea = a[i].id
   capturarCliques(ea)
 }
+
+var branca = document.getElementById('calc-branca')
+var preta = document.getElementById('calc-preta')
+var corfundo = document.querySelector('#cor-principal')
+var calculadora = document.querySelector('#calculadora')
+
+branca.addEventListener('click', ()=>{
+    corfundo.className = 'fundo-preto'
+    calculadora.className = 'calculadora-branca'
+})
+
+preta.addEventListener('click', ()=>{
+    corfundo.className = 'fundo-branco'
+    calculadora.className = 'calculadora-preta'
+})
